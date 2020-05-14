@@ -42,7 +42,7 @@ const server = app.listen(app.get('port'), ()=>{
     console.log('server on port', app.get('port'))
     console.log("INICIO")
 
-    const dbo = mongo.db("chat");
+    const dbo = mongo.db("prp");
 
 
     var myobj = { name: "Company Inc", address: "Highway 37" };
