@@ -3,7 +3,7 @@ const MongoClient = require('mongodb').MongoClient;
 
 function ConnecMongo() {
     
-    const uri = "mongodb://krlsoexe:ad17urca@127.0.0.1/:27017/chat";
+    const uri = "mongodb://krlosexe:ad17urca@127.0.0.1/:27017/prp";
 
     let mongoOptions = {
         useNewUrlParser: true, 
@@ -22,7 +22,6 @@ function ConnecMongo() {
 
 
 module.exports = ConnecMongo;
-
 
 
 
