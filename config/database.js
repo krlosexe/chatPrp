@@ -3,7 +3,7 @@ const MongoClient = require('mongodb').MongoClient;
 
 function ConnecMongo() {
     
-    const uri = "mongodb://krlosexe:ad17urca@127.0.0.1/:27017/prp";
+    const uri = "mongodb://krlosexe:ad17urca@127.0.0.1:27017/prp";
 
     let mongoOptions = {
         useNewUrlParser: true, 
