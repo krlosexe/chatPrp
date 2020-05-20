@@ -3,45 +3,13 @@ const express         = require('express')
 const app             = express()
 const SocketIO        = require('socket.io')
 const client_mongo    = require('./config/database.js')
-const bodyParser      = require('body-parser');
-//var   multer          = require('multer');
-//var   upload          = multer();
+
+
 const admin           = require("firebase-admin");
 const serviceAccount  = require("./serviceAccountKey.json");
 
 const mongo = client_mongo()
 require('events').EventEmitter.prototype._maxListeners = 0;
-
-
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
-
-
-
-
-
-
-
-app.use(bodyParser.json()); // support json encoded bodies
-app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
-
-/*
-app.use(upload.array());
-app.use(express.static('public'));
-app.use('/files', express.static('files'));
-*/
-
-
-
-app.use(require('./api/api.js'));
-
-
-
-
-
 
 
 
