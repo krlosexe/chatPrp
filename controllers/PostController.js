@@ -22,11 +22,16 @@ exports.store = function(request, response) {
     var time     = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
     var dataTime = `${date} ${time}`
 
+    let file_name = "0"
+    if(request.file.originalname){
+        file_name = "upload/" + request.file.originalname
+    }
+
      const data = {
-        "post"      : request.body.post,
+        "post"      :  request.body.post,
         "lines"     :  lines,
         "create_at" :  dataTime,
-        "file"      : "upload/" + request.file.originalname
+        "file"      :  file_name
      }
 
     dbo.collection("posts").insertOne(data, function(err, res) {
