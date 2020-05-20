@@ -11,9 +11,6 @@ app.set('key', config.key);
 
 exports.store = function(request, response) {
 
-     console.log(request.file)
-     
-
     const dbo = mongo.db("prp");
 
     const lines  =  request.body.lines.split(',')
@@ -23,7 +20,7 @@ exports.store = function(request, response) {
     var dataTime = `${date} ${time}`
 
     let file_name = "0"
-    if(request.file.originalname){
+    if(request.file != undefined){
         file_name = "upload/" + request.file.originalname
     }
 
