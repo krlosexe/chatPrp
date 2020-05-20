@@ -41,7 +41,7 @@ exports.store = function(request, response) {
             "lines" : lines
         }
       }
-     requesting.post('http://192.168.1.120:8000/api/notification/post',form,function(err,res,body){
+     requesting.post('https://pdtclientsolutions.com/crm-public/api/notification/post',form,function(err,res,body){
         console.log(body)
      });
 
