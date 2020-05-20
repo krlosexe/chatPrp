@@ -38,12 +38,12 @@ async function userSeeders(){
     ]
 
     dbo.collection("users").drop(function(err, delOK) {
-        if (err) throw err;
+     //   if (err) throw err;
         if (delOK) console.log("Collection deleted");
     });
 
     dbo.collection("users").insertMany(data, function(err, res) {
-        if (err) throw err;
+       //if (err) throw err;
         console.log("1 document inserted");
     });
     console.log("Run Seeders User")

@@ -10,8 +10,7 @@ app.set('key', config.key);
 
 exports.auth = function(request, response) {
 
-    const dbo = mongo.db("prp");
-
+    const dbo   = mongo.db("prp");
     const where = {
         "email" : request.body.email
     }
@@ -26,9 +25,9 @@ exports.auth = function(request, response) {
                         check:  true
                     };
                     const token = jwt.sign(payload, app.get('key'), {
-                        expiresIn: 1440
+                        expiresIn: '365d' 
                     });
-                    response.status(200).json({"token" : token})
+                    response.status(200).json({"access_token" : token})
                }else{
                 response.status(400).json("Email o Password Incorrecto")
                }

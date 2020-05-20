@@ -4,8 +4,10 @@ const app             = express()
 const SocketIO        = require('socket.io')
 const client_mongo    = require('./config/database.js')
 const bodyParser      = require('body-parser');
-const admin             = require("firebase-admin");
-const serviceAccount    = require("./serviceAccountKey.json");
+//var   multer          = require('multer');
+//var   upload          = multer();
+const admin           = require("firebase-admin");
+const serviceAccount  = require("./serviceAccountKey.json");
 
 const mongo = client_mongo()
 require('events').EventEmitter.prototype._maxListeners = 0;
@@ -19,10 +21,28 @@ app.use(function(req, res, next) {
 
 
 
+
+
+
+
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
+/*
+app.use(upload.array());
+app.use(express.static('public'));
+app.use('/files', express.static('files'));
+*/
+
+
+
 app.use(require('./api/api.js'));
+
+
+
+
+
+
 
 
 admin.initializeApp({
